@@ -1,0 +1,26 @@
+<article>
+	<%= form_tag '/recipes/parse_from_one_box' do %>
+
+		<h1>New Recipe</h1>
+		<section id="recipeonebox">
+			<h3>Recipe</h3>
+			<section id="recipebox">
+				<%= text_area_tag 'recipe_text_box', recipe ||= nil , :size => "80x20" %>
+			</section>
+			<aside><h5>Recipe should be of the following form:</h5><br>
+				<br>
+				Recipe Title<br>
+				Source<br>
+				Prep Time<br>
+				Cook Time<br>
+				<span class="description">[empty line]</span><br>
+				Ingredients <span class="description">[seperate by tabs or newlines]</span><br>
+				<span class="description">[empty line]</span><br>
+				Steps <span class="description">[seperated by periods]</span><br>
+			</aside>
+		</section>
+		
+		<%= submit_tag 'Create', class: "success radius button expand" %>
+
+	<% end %>
+</article>

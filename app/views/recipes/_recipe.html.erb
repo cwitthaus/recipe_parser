@@ -1,0 +1,19 @@
+<%= link_to recipe do %>
+	<li>
+		<div>
+			<h3 class="title">
+				<%= recipe.title %>
+			</h3>
+			<div class="information">
+				<span class="steps">
+					Steps:
+					<%= recipe.steps.count %>
+				</span>
+				<span class="ingredients">
+					Ingredients:
+					<%= recipe.ingredients.count %>
+				</span>
+			</div>
+		</div>
+	</li>
+<% end %>

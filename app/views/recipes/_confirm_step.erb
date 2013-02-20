@@ -1,0 +1,6 @@
+<li class="confirm_step">
+	<%= button_to_remove_fields f %>
+	<%= f.text_field :number, :readonly => true, class: "number" %>
+	<%#= step.modifiers %>
+	<%= f.text_area :description, class: "description" %>
+<li>

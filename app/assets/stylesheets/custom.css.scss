@@ -1,0 +1,75 @@
+@import "foundation_and_overrides";
+@import "variables";
+
+html {
+	height: 100%;
+}
+
+header {
+	@include outerRow();
+	width:100%;
+	margin-bottom: 30px;
+	#site-name{
+		text-transform: uppercase;
+		font-size: 3em;
+	}
+	nav {
+		@extend .top-bar;
+		border-bottom: 3px solid $secondaryB;
+		outline: 5px solid $secondaryB-dark;
+	}
+}
+
+div.error-messages {
+	@include outerRow();
+	@include column(9, center);
+	
+	.flash {
+		padding: 15px;
+		border-radius: 5px;
+	}
+	.error {
+		background-color: $secondaryA;
+		color: $secondaryB;
+	}
+	.message {
+		font-size: 1.5em;
+		margin-bottom: 5px;
+	}
+}
+
+body {
+	@include outerRow();
+  width: 100%;
+  height: 100%;
+	.container {
+		background-color: $primary;
+		position: relative;
+		min-height: 100%;
+		height: auto !important;
+		height: 100%;
+		margin: 0 auto -2em;
+		padding-bottom: 30px;
+}
+	.push {
+		clear: both;
+		margin: 2em;
+	}
+}
+
+footer {
+	@include outerRow();
+	width: 100%;
+	background-color: $secondaryA;
+	border-top: 3px solid $secondaryB;
+	outline: 5px solid $secondaryB-dark;
+	position: relative;
+ 	bottom: 0;
+ 	height: 2em;
+}
+
+textarea,input {
+	outline: none;
+	resize: none;
+	overflow: auto;
+}

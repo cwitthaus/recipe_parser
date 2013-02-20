@@ -1,0 +1,27 @@
+<article>
+	<section id="recipe_info">
+		<h1><%= @recipe.title %></h1>
+		<h3><%= @recipe.source %></h3>
+		<% if !@recipe.prep_time.blank? %>
+			<h5>Prep Time: <span class="time"><%= @recipe.prep_time %></span></h5>
+		<% end %>
+		<% if !@recipe.cook_time.blank? %>
+			<h5>Cook Time: <span class="time"><%= @recipe.cook_time %></span></h5>
+		<% end %>
+	</section>
+	<% if @recipe.ingredients %>
+		<section id="recipe_ingredients">
+			<ul id="ingredients">
+				<%= render @recipe.ingredients %>
+			</ul>
+		</section>
+	<% end %>
+
+	<% if @recipe.steps %>
+		<section id="recipe_steps">
+			<ol id="steps">
+				<%= render @recipe.steps %>
+			</ol>
+		</section>
+	<% end %>
+</article>

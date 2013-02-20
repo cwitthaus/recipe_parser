@@ -1,0 +1,28 @@
+<article>
+	<%= form_tag '/recipes/parse_from_three_boxes' do %>
+
+		<h1>New Recipe</h1>
+		<section>
+			<h3>Recipe Info</h3>
+			<h5>Title, Source, Prep Time, Cook Time</h5>
+			<%= text_area_tag 'info_text_box', info ||= nil , :size => "80x10" %>
+
+		</section>
+		<section>
+			<h3>Ingredients</h3>
+			<h5>Amount, Name, Modifiers</h5>
+			<%= text_area_tag 'ingredients_text_box', ingredients ||= nil , :size => "80x20"  %>
+		</section>
+		<section>
+			<h3>Steps</h3>
+			<h5>Seperated by Periods</h5>
+			<%= text_area_tag 'steps_text_box', steps ||= nil , :size => "80x20"  %>
+		</section>
+		
+
+		<%= submit_tag 'Create', class: "success radius button expand" %>
+
+	<% end %>
+</article>
+
+

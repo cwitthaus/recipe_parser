@@ -1,0 +1,163 @@
+// Place all the styles related to the Recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "foundation_and_overrides";
+@import "variables";
+
+article {
+	@include outerRow();
+	@include column(9, center);
+}
+
+
+section {
+	margin-bottom: 20px;
+	.confirm_ingredient,.confirm_step {
+		@include outerRow();
+	}
+	li {
+		list-style-type: none;
+		color: $primary-light;
+		.deletebutton,h5.title { 
+			@include column(1, collapse);
+			height: 20px;
+			padding: auto;
+			margin:0px;
+		}
+		input,div {
+			&.amount {
+				@include offsetBy(1);
+				@include column(2);
+			}
+			&.name,&.modifiers {
+				@include column(3);
+				@include offsetBy(1);
+			}
+			&.number {
+				@include column(1);
+				font-size:  3em;
+				border: none;
+				height: auto;
+				background-color: $mainColor;
+			}
+		}
+		textarea.description {
+			@include column(10);
+			height:5em;
+		}
+	}
+}
+
+section#recipe_info {
+	text-align: center;
+	border-bottom: 2px dotted $secondaryB;
+	margin-bottom: 10px;
+	h1 {
+		color: $secondaryA;
+	}
+	h3 {
+		color: $secondaryB;
+	}
+	h5 {
+		color: $secondaryB-dark;
+	}
+	div.row {
+		@include outerRow();
+		border-bottom: 1px dashed lighten($mainColor, 5%);
+		padding-top: 5px;
+		label {
+			@include column(2, collapse);
+			text-align: left;
+			color: white;
+		}
+		input {
+			@include column(10);
+		}
+	}	
+}
+
+section#recipe_ingredients {
+	@include column(4);
+	padding-left: 10px;
+	span.name {
+		color: darken($primary-light, 10%);
+	}
+}
+
+section#recipe_steps {
+	@include column(8);
+	border-left: 2px dotted $secondaryA;
+	color: $secondaryA-dark;
+	span.number {
+		font-size: 2em;
+	}
+	span.description {
+		color: darken($primary-light, 10%);
+	}
+}
+
+section#recipeonebox {
+	aside {
+		@include column(4);
+		span.description {
+			color: $primary-light;
+		}
+	}
+	section#recipebox {
+		@include column(8, collapse);
+		margin: none;
+	}
+}
+
+ul#recipe_list {
+	margin-top: 15px;
+	li {
+		@include outerRow();
+		list-style-type: none;
+		color: $primary-light;
+		border: 2px solid $secondaryA;
+		padding-left: 15px;
+		padding-right: 15px;
+		border-radius: 5px;
+		margin-bottom: 15px;
+		h3.title {
+			@include column(9)
+		}
+		div.information {
+			margin-top: 7px;
+			height: 100%;
+			@include column(3);
+			span {
+				@include column(3);
+			}
+		}
+		&:hover {
+			border: 2px solid $secondaryA-light;
+			background-color: $primary-light;
+			color: $primary;
+		}
+	}
+}
+
+div.field_with_errors {
+	width: auto;
+	input,textarea {
+		background-color: $primary-light;
+	}
+}
+
+div.pagination {
+	@include outerRow();
+	text-align: right;
+	a {
+		color: $primary-light;
+	}
+	.disabled {
+		color: $primary-dark;
+	}
+	* {
+		padding: 5px;
+		border: 1px dotted $secondaryA;
+	}
+}
+

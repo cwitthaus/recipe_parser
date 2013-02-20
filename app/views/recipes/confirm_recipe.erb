@@ -1,0 +1,50 @@
+<article id="confirm_recipe">
+	<%= form_for @recipe do |f|%>
+	<section id="recipe_info">
+		<div class="row">
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+		</div>
+		<div class="row">
+			<%= f.label :source %>
+			<%= f.text_field :source %>
+		</div>
+		<div class="row">
+			<%= f.label :prep_time %>
+			<%= f.text_field :prep_time %>
+		</div>
+		<div class="row">
+			<%= f.label :cook_time %>
+			<%= f.text_field :cook_time %>
+		</div>
+	</section>
+	<section id="ingredients">
+		<% if @recipe.ingredients.any? %>
+			<ul class="ingredients">
+				<li class="confirm_ingredient">
+					<h5 class="title">Ingredients</h5>
+					<div class="amount">Amount</div> 
+					<div class="name">Name</div> 
+					<div class="modifiers">Modifiers</div>
+				</li> 
+				<%= f.fields_for :ingredients do |builder| %>
+					<%= render "confirm_ingredient", f: builder %>
+				<% end %>
+			</ul>
+		<% end %>
+		<%= button_to_add_ingredient f %>
+	</section>
+	<section id="steps">
+		<h5>Steps</h5>
+		<% if @recipe.steps.any? %>
+			<ul class="steps">
+				<%= f.fields_for :steps do |builder| %>
+					<%= render "confirm_step", f: builder %>
+				<% end %>
+			</ul>
+		<% end %>
+		<%= button_to_add_step f %>
+	</section>
+	<%= f.submit "Confirm", class: "success radius button expand" %>
+	<% end %>
+</article>

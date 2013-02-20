@@ -1,2 +1,33 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+Models:
+
+Recipes
+- Original Text
+- Title
+- Source
+- Prep Time
+- Cook Time
+- Has Many Ingredients
+- Has Many Steps
+- Servings
+
+Ingredients
+- Original Text
+- Amount
+- Ingredient Name
+- Modifiers
+
+Steps
+- Step Number
+- Step Text
+
+
+General Thought Process
+Intro Text Box
+- Title
+- Source
+- Prep Time
+- Cook Time
+Ingredient Text Box
+- each one on own line?
+Steps Text Box
+- Seperated by periods

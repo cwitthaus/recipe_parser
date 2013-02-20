@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  original_text: MyString
+  amount: MyString
+  name: MyString
+  modifiers: MyString
+
+two:
+  original_text: MyString
+  amount: MyString
+  name: MyString
+  modifiers: MyString

@@ -1,0 +1,13 @@
+<div class="error-messages">
+	<% flash.each do |key, value| %>
+		<%# print each part of the value %>
+  	<%= content_tag(:div , class: "flash #{key}")  do%>
+  		<% value.each do |flash_message|%>
+        <div class="message">
+  		    <%= flash_message %>
+        </div>
+  		<% end %>
+  		<% flash.delete(key)%>
+  	<% end %>
+	<% end %>
+</div>
